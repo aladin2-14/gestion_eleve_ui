@@ -1,0 +1,24 @@
+@import './base.css';
+
+#app {
+ width: 90vw;
+  margin: 0rem;
+  padding: 0rem;
+  font-weight: normal;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display:block;
+    grid-template-columns: 1fr 1fr;
+    padding: 0rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+
