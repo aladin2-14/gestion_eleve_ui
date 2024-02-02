@@ -13,7 +13,13 @@ export default {
                 "username": this.username,
                 "password": this.password
             }
-            this.$store.state.user = data
+            if(this.username.trim()!="" || this.password.trim()!="")
+                this.$store.state.user = data
+            else
+                alert("veille remplir")
+             
+           
+            console.log(this.$store.state.user)
         }
     }
 };
