@@ -1,4 +1,31 @@
 <script>
+export default{
+    data(){
+        return{
+            add_employe_shown:false,
+            listeEmployes:[
+                {
+                    id:1,
+                    nom:"Artcal'O",
+                    prenom:"Lone Wolf",
+                    age:45,
+                    genre:"F",
+                    classe:"3 eme post",
+                    conge_fin:null
+                },
+                {
+                    id:2,
+                    nom:"TLW",
+                    prenom:"Wolverine",
+                    age:45,
+                    genre:"F",
+                    classe:"3 eme post",
+                    conge_fin:null
+                },
+            ]
+        }
+    }
+}
 </script>
 
 <template>
@@ -8,10 +35,10 @@
 
 
         <div class="un">
-            <p><strong>Liste des utilisateur</strong></p>
+            <p><strong>Liste des Eleves</strong></p>
             <div class="un_un">
                 <input type="text" placeholder="Chercher...">
-                <button @click="ajouterEmploye">Ajouter Emploiyer</button>
+                <button @click="ajouterEleve">Ajouter Eleve</button>
 
             </div>
         </div>
@@ -24,33 +51,23 @@
                         <td>PRENOM</td>
                         <td>AGE</td>
                         <td>GENRE</td>
-                        <td>STATUS</td>
+                        <td>classe</td>
                         <td id="tresor">ACTIONS</td>
 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Artecal'ol</td>
-                        <td>Lone Wolf</td>
-                        <td>45</td>
-                        <td>F</td>
-                        <td>pas en coger</td>
+                    <tr
+                        v-for="employe in listeEmployes"
+                            :key="employe.id"
+                            >
+                            <td>{{employe.nom}}</td>
+                            <td>{{employe.prenom}}</td>
+                            <td>{{employe.age}}</td>
+                            <td>{{employe.genre}}</td>
+                            <td>{{employe.classe}}</td>
                         <td>
-                            <button id="sortillege" @click="ajouterConge">Ajouter un conger</button>
-                            <button id="invocation" @click="modifier">Modifier</button>
-                            <button id="multitude" @click="supprimer">Supprimer</button>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>TWL</td>
-                        <td>wolverine</td>
-                        <td>45</td>
-                        <td>F</td>
-                        <td>pas en coger</td>
-                        <td>
-                            <button id="sortillege" @click="ajouterConge">Ajouter un conger</button>
+                            <button id="sortillege" @click="ajouterEleve">Ajouter un eleve</button>
                             <button id="invocation" @click="modifier">Modifier</button>
                             <button id="multitude" @click="supprimer">Supprimer</button>
                         </td>
@@ -62,7 +79,8 @@
                 <div class="trois_un">
                     <div class="trois_un_un">
                         <div class="trouble">
-                            <p>Ajouter conger</p>
+                            
+                            <p>Ajouter Eleve</p>
                         </div>
 
                     </div>

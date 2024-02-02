@@ -9,24 +9,25 @@
                     </div>
                     <div class="huit_un_deux">
                         <p>id</p>
-                        <input></input>
+                        <input v-model="id"></input>
                         <p>Nom</p>
-                        <input></input>
+                        <input v-model="nom"></input>
                         <p>Prenom</p>
-                        <input></input>
+                        <input v-model="prenom"></input>
                         <p>Age</p>
-                        <input></input>
+                        <input v-model="age"></input>
                         <p>Genre</p>
-                        <input></input>
+                        <input v-model="genre"></input>
 
                     </div>
-                    <button>Ajouter</button>
+                    <button @click="ajout">Ajouter</button>
                 </div>
 
             </div>
 </template>
 
 <script>
+import overlay_view from "./overlay_view"
 export default {
 
 }
