@@ -28,7 +28,7 @@ export default {
 <template>
     <body>
         <div class="un">
-            <h1>GESTION <br>ETUDIANT</h1>
+            <h1>GESTIONNAIRE <br>DE <br>BUREAU</h1>
         </div>
         <div class="deux">
             <div class="deux_un">
@@ -40,7 +40,13 @@ export default {
                 <div class="deux_trois">
                     <p>Mot De passe</p>
                     <input type="password" v-model="password">
+                    <select id="choix" name="choix" v-model="page" @change="pagesecletif">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <!-- Ajoutez autant d'options que nécessaire -->
+    </select>
                 </div>
+               
                 <button @click="login">connexion</button>
             </div>
         </div>
@@ -91,6 +97,7 @@ body {
 
 .deux_deux {
     margin-left: 5vh;
+    margin-top: 2vh;
 
 }
 
@@ -113,6 +120,7 @@ body {
 
 .deux_trois {
     margin-left: 5vh;
+    margin-top: 2vh;
 
 }
 
@@ -131,7 +139,7 @@ body {
 .deux_un button {
     padding: 8px;
     width: 15vh;
-    margin-top: 15px;
+    margin-top: 40px;
     margin-left: 5vh;
     background-color: rgb(9, 31, 228);
     color: aliceblue;
@@ -155,4 +163,13 @@ input:focus {
     border: 2px solid rgb(224, 9, 228);
 
 
-}</style>
+}
+#choix{
+    width: 40vh;
+    height: 30px;
+    border: 2px solid rgb(222, 239, 255);
+    border-radius: 5px 5px;
+    margin-top: 2vh;
+
+}
+</style>
