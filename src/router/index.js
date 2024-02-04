@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
   
     {
-      path:"/",
+      path:"/listeleve",
       name:"listeleve",
       component:ListEleve
     },

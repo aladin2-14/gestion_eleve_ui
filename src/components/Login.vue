@@ -1,11 +1,18 @@
 <script>
+import ListEleve from "../views/ListEleve.vue"
+import ListeEmployes from "../views/ListeEmployes.vue"
 export default {
     data() {
         return {
             username: "",
             password: "",
-
+            page:"listeleve",
         }
+    
+    },
+    components:{
+        ListeEmployes,
+        ListEleve,
     },
     methods: {
         login() {
@@ -20,6 +27,9 @@ export default {
              
            
             console.log(this.$store.state.user)
+        },
+        pagesecletif(){
+            this.$router.app.$emit('selectionnairedepage', this.page)
         }
     }
 };
