@@ -1,18 +1,12 @@
 <script>
-import ListEleve from "../views/ListEleve.vue"
-import ListeEmployes from "../views/ListeEmployes.vue"
+
 export default {
     data() {
         return {
             username: "",
             password: "",
-            page:"listeleve",
         }
     
-    },
-    components:{
-        ListeEmployes,
-        ListEleve,
     },
     methods: {
         login() {
@@ -28,9 +22,7 @@ export default {
            
             console.log(this.$store.state.user)
         },
-        pagesecletif(){
-            this.$router.app.$emit('selectionnairedepage', this.page)
-        }
+       
     }
 };
 </script>
@@ -50,11 +42,7 @@ export default {
                 <div class="deux_trois">
                     <p>Mot De passe</p>
                     <input type="password" v-model="password">
-                    <select id="choix" name="choix" v-model="page" @change="pagesecletif">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <!-- Ajoutez autant d'options que nécessaire -->
-    </select>
+                
                 </div>
                
                 <button @click="login">connexion</button>
